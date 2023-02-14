@@ -29,3 +29,6 @@ Follow the steps:
 - git clone
 - npm i
 - ng serve
+
+s3 bucket : http://vishnu-shop.s3-website-us-east-1.amazonaws.com/
+cloudfront : https://d152oub55dmr4x.cloudfront.net/
