@@ -52,7 +52,7 @@ export class ProductsService extends ApiService {
     const url = this.getUrl('bff', `products/${id}`);
     return this.http
       .get<{ product: Product }>(url)
-      .pipe(map((resp) => resp.product));
+      .pipe(map((resp:any) => resp.body.product));
   }
 
   getProducts(): Observable<Product[]> {
@@ -63,8 +63,8 @@ export class ProductsService extends ApiService {
       return this.http.get<Product[]>('/assets/products.json');
     }
 
-    const url = this.getUrl('bff', 'products');
-    return this.http.get<Product[]>(url);
+    const url = this.getUrl('bff', 'productlist');
+    return this.http.get<Product[]>(url)
   }
 
   getProductsForCheckout(ids: string[]): Observable<Product[]> {
