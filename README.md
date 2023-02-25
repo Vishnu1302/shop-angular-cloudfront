@@ -30,5 +30,5 @@ Follow the steps:
 - npm i
 - ng serve
 
-products list(Api GATEWAY URL) : https://7drfjrrjqj.execute-api.us-east-1.amazonaws.com/productlist
+products list(Api GATEWAY URL) : https://7drfjrrjqj.execute-api.us-east-1.amazonaws.com/products
 getproductbyid : https://7drfjrrjqj.execute-api.us-east-1.amazonaws.com/products/7567ec4b-b10c-48c5-9345-fc73c48a80aa
