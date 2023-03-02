@@ -466,7 +466,7 @@
         "include": [
           "dist/app"
         ],
-        "artifactDirectoryName": "serverless/vishnu-shop/dev/1676405559006-2023-02-14T20:12:39.006Z"
+        "artifactDirectoryName": "serverless/vishnu-shop/dev/1677789995577-2023-03-02T20:46:35.577Z"
       },
       "resources": {
         "$ref": "$[\"service\"][\"resources\"]"
@@ -476,7 +476,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/vishnu-shop/dev/1676405559006-2023-02-14T20:12:39.006Z",
+    "artifactDirectoryName": "serverless/vishnu-shop/dev/1677789995577-2023-03-02T20:46:35.577Z",
     "artifact": ""
   }
 }

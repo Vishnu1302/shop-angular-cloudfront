@@ -52,7 +52,7 @@ export class ProductsService extends ApiService {
     const url = this.getUrl('bff', `products/${id}`);
     return this.http
       .get<{ product: Product }>(url)
-      .pipe(map((resp:any) => resp.body.product));
+      .pipe(map((resp:any) => resp[0]));
   }
 
   getProducts(): Observable<Product[]> {
