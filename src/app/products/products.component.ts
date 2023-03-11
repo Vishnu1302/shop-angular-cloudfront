@@ -12,8 +12,8 @@ export class ProductsComponent implements OnInit {
   readonly products$: Observable<
     Product[]
   > = this.productsService.getProducts();
-
   constructor(private readonly productsService: ProductsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

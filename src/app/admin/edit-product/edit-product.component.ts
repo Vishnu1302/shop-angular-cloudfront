@@ -69,7 +69,6 @@ export class EditProductComponent implements OnInit, OnDestroy {
       this.loaded$.next(true);
       return;
     }
-
     this.productsService
       .getProductById(productId)
       .pipe(
@@ -77,7 +76,7 @@ export class EditProductComponent implements OnInit, OnDestroy {
         takeUntil(this.onDestroy$)
       )
       .subscribe((product) => {
-        if (product) {
+        if (product) {  
           this.form.patchValue(product);
           this.productId = product.id;
         }
