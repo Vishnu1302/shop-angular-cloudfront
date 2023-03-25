@@ -10,23 +10,20 @@ import { NotificationService } from '../notification.service';
 import { tap } from 'rxjs/operators';
 
 @Injectable()
-export class ErrorPrintInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
   constructor(private readonly notificationService: NotificationService) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    return next.handle(request).pipe(
-      tap({
-        error: (res) => {
-          const url = new URL(request.url);
-          this.notificationService.showError(
-            `Request to "${url.pathname}" failed as "${res.status}" "${res.error.message}". Check the console for the details`,
-            0
-          );
-        },
-      })
-    );
+    const token = localStorage.getItem('authorizationToken')?.toString() || '';
+    const authRequest = request.clone({
+        
+        headers: request.headers.set("Authorization", token)
+    
+      });
+    
+      return next.handle(authRequest);
   }
 }

@@ -17,6 +17,8 @@ import { CartModule } from './cart/cart.module';
 import { CONFIG_TOKEN } from './core/injection-tokens/config.token';
 import { environment } from '../environments/environment';
 import { ErrorPrintInterceptor } from './core/interceptors/error-print.interceptor';
+// for future
+// import { AuthInterceptor } from './core/interceptors/authorization.interceptor';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const interceptors: Provider[] = [
@@ -25,6 +27,11 @@ const interceptors: Provider[] = [
     useClass: ErrorPrintInterceptor,
     multi: true,
   },
+  // {
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass: AuthInterceptor,
+  //   multi: true,
+  // },
 ];
 
 @NgModule({
