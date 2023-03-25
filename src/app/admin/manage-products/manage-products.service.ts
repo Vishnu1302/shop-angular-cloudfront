@@ -16,26 +16,27 @@ export class ManageProductsService extends ApiService {
       );
       return EMPTY;
     }
-
+    //const formData = new FormData();formData.append('file', file);
+    this.getPreSignedUrl(file.name).subscribe(res => {
+      console.log(res);
+    })
     return this.getPreSignedUrl(file.name).pipe(
       switchMap((url) =>
-        this.http.put(url, file, {
-          headers: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
-            'Content-Type': 'text/csv',
-          },
-        })
+        this.http.put(url, file)
       )
     );
   }
 
   private getPreSignedUrl(fileName: string): Observable<string> {
     const url = this.getUrl('import', 'import');
-
+    const token  = localStorage.getItem('authorizationToken')?.toString() || ""
     return this.http.get<string>(url, {
       params: {
         name: fileName,
       },
+      headers: {
+        Authorization: token
+      }
     });
   }
 }
